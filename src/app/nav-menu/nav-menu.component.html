@@ -1,0 +1,91 @@
+<header>
+    <nav
+      class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
+    >
+      <div class="container">
+        <a class="navbar-brand" [routerLink]="['/']">
+          Admin Panel
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target=".navbar-collapse"
+          aria-label="Toggle navigation"
+          [attr.aria-expanded]="isExpanded"
+          (click)="toggle()"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="navbar-collapse collapse d-sm-inline-flex flex-sm-row"
+          [ngClass]="{ show: isExpanded }"
+        >
+          <ul class="navbar-nav mr-auto flex-grow">
+            <li
+              class="nav-item"
+              [routerLinkActive]="['active']"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <a class="nav-link text-dark" [routerLink]="['/']">Главная</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']" *ngIf="loggedIn()">
+              <a class="nav-link text-dark" [routerLink]="['/blocks']">Блок</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']" *ngIf="loggedIn()">
+              <a class="nav-link text-dark" [routerLink]="['/services']">Сервисы</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']" *ngIf="loggedIn()">
+              <a class="nav-link text-dark" [routerLink]="['/subservices']">Подсервисы</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']" *ngIf="loggedIn()">
+              <a class="nav-link text-dark" [routerLink]="['/chats']">Чаты</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']" *ngIf="loggedIn()">
+              <a class="nav-link text-dark" [routerLink]="['/calls']">Вызовы</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']" *ngIf="loggedIn()">
+              <a class="nav-link text-dark" [routerLink]="['/texts']">Тексты</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']" *ngIf="loggedIn()">
+              <a class="nav-link text-dark" [routerLink]="['/suggestions']">Предложения</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']" *ngIf="loggedIn()">
+              <a class="nav-link text-dark" [routerLink]="['/reports']">Жалобы</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto" *ngIf="loggedIn()">
+            <li
+              class="nav-item dropdown"
+              [routerLinkActive]="['active']"
+              dropdown
+            >
+              <a class="nav-link text-dark dropdown-toggle" dropdownToggle>
+                Привет {{ authService.decodedToken.sub | titlecase }}
+              </a>
+              <div class="dropdown-menu mt-3" *dropdownMenu>
+                <a class="dropdown-item" href="#" [routerLink]="['/user-profile']"
+                  ><i class="fa fa-user"> </i>Редактировать профиль</a
+                >
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" (click)="logout()" title="Logout"
+                  ><i class="fa fa-sign-out"> </i>Выход</a
+                >
+              </div>
+            </li>
+          </ul>
+          <ul class="navbar-nav" *ngIf="!loggedIn()">
+            <li class="nav-item">
+              <a
+                class="nav-link text-dark"
+                [routerLink]="['/login']"
+                title="Login"
+                >Вход</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  

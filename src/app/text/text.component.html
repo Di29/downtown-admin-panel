@@ -1,0 +1,26 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Заголовок</th>
+            <th>Текст</th>
+            <th>Действия</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let text of texts | async">
+              <td>{{text.textName}}</td>
+            <td>{{text.text}}</td>
+            <td>
+                <button (click)="updateText(text.id)" class="btn btn-outline-secondary ml-2"><i class="fa fa-pencil-square-o"></i></button> 
+                
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

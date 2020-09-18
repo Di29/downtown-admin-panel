@@ -1,0 +1,28 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Подсервисы <button (click)="createSubservice()" class="btn btn-outline-info">Создать подсервис</button> </h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>№</th>
+            <th>Подсервис</th>
+            <th>Родитель</th>
+            <th>Действия</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let subservice of subservices | async">
+            <td>{{subservice.id}}</td>
+            <td>{{subservice.subserviceName}}</td>
+            <td>{{subservice.serviceId}}</td>
+            <td>
+                <button (click)="updateSubservice(subservice.id)" class="btn btn-outline-secondary ml-2"><i class="fa fa-pencil-square-o"></i></button> 
+                <button (click)="deleteSubservice(subservice.id)" class="btn btn-outline-danger ml-2"><i class="fa fa-times"></i></button> 
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

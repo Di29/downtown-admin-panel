@@ -1,0 +1,30 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Чат <button (click)="createChat()" class="btn btn-outline-info">Добавить чат</button> </h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>№</th>
+            <th>Код чата</th>
+            <th>Код блока</th>
+            <th>Код сервиса</th>
+            <th>Действия</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let chat of chats | async">
+            <td>{{chat.id}}</td>
+            <td>{{chat.chatId}}</td>
+            <td>{{chat.blockId}}</td>
+            <td>{{chat.serviceId}}</td>
+            <td>
+                <button (click)="updateChat(chat.id)" class="btn btn-outline-secondary ml-2"><i class="fa fa-pencil-square-o"></i></button> 
+                <button (click)="deleteChat(chat.id)" class="btn btn-outline-danger ml-2"><i class="fa fa-times"></i></button> 
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

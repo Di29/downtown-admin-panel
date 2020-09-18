@@ -1,0 +1,23 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Блок</th>
+            <th>Предложения по улучшению</th>
+            <th>Сервис</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let suggestion of suggestions | async">
+            <td>{{suggestion.blockId}}</td>
+            <td>{{suggestion.suggestionText}}</td>
+            <td>{{suggestion.serviceName}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

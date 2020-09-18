@@ -1,0 +1,23 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Блок</th>
+            <th>Жалоба</th>
+            <th>Сервис</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let report of reports | async">
+            <td>{{report.blockId}}</td>
+            <td>{{report.reportText}}</td>
+            <td>{{report.serviceName}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

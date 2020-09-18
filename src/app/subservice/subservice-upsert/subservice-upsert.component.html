@@ -1,0 +1,16 @@
+<h3>Создать подсервис</h3>
+<div>
+  <form *ngIf="ready" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="nameRus">Подсервис</label>
+      <input type="text" class="form-control" id="nameRus" required [(ngModel)]="subservice.subserviceName" name="nameRus">
+    </div>
+    <div class="form-group">
+        <label for="nameRus">Сервис</label>
+        <input type="text" class="form-control" id="service" required [(ngModel)]="subservice.serviceId" name="service">
+    </div>
+
+    <button type="submit" class="btn btn-success">Сохранить</button> 
+    <button (click)="gotoList()" class="btn btn-primary ml-2">Вернуться к списку</button><br>
+  </form>
+</div>

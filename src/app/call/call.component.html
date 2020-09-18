@@ -1,0 +1,28 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>№</th>
+            <th>Блок</th>
+            <th>Сервис</th>
+            <th>Подсервис</th>
+            <th>Офис</th>
+            <th>Дата</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let call of calls | async">
+            <td>{{call.id}}</td>
+            <td>{{call.blockName}}</td>
+            <td>{{call.serviceName}}</td>
+            <td>{{call.subserviceName}}</td>
+            <td>{{call.officeNumber}}</td>
+            <td>{{call.createdAt | date:'mediumDate'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

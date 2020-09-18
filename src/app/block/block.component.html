@@ -1,0 +1,26 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Блоки <button (click)="createBlock()" class="btn btn-outline-info">Создать блок</button> </h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>№</th>
+            <th>Блок</th>
+            <th>Действия</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let block of blocks | async">
+            <td>{{block.id}}</td>
+            <td>{{block.blockName}}</td>
+            <td>
+                <button (click)="updateBlock(block.id)" class="btn btn-outline-secondary ml-2"><i class="fa fa-pencil-square-o"></i></button> 
+                <button (click)="deleteBlock(block.id)" class="btn btn-outline-danger ml-2"><i class="fa fa-times"></i></button> 
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
