@@ -8,6 +8,7 @@
           <tr>
             <th>№</th>
             <th>Сервис</th>
+            <th>Картинка</th>
             <th>Действия</th>
           </tr>
         </thead>
@@ -15,6 +16,7 @@
           <tr *ngFor="let service of services | async">
             <td>{{service.id}}</td>
             <td>{{service.serviceName}}</td>
+            <td>{{service.pictureUrl}}</td>
             <td>
                 <button (click)="updateService(service.id)" class="btn btn-outline-secondary ml-2"><i class="fa fa-pencil-square-o"></i></button> 
                 <button (click)="deleteService(service.id)" class="btn btn-outline-danger ml-2"><i class="fa fa-times"></i></button> 

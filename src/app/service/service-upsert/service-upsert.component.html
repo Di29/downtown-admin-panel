@@ -1,9 +1,13 @@
-<h3>Создать категорию</h3>
+<h3>Создать сервис</h3>
 <div>
   <form *ngIf="ready" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="nameRus">Сервис</label>
+      <label for="nameRus">Название сервиса</label>
       <input type="text" class="form-control" id="nameRus" required [(ngModel)]="service.serviceName" name="nameRus">
+    </div>
+    <div class="form-group">
+      <label for="picture">URL картинки</label>
+      <input type="text" class="form-control" id="picture" required [(ngModel)]="service.pictureUrl" name="picture">
     </div>
 
     <button type="submit" class="btn btn-success">Сохранить</button> 
