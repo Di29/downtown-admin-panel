@@ -45,9 +45,6 @@
               <a class="nav-link text-dark" [routerLink]="['/calls']">Вызовы</a>
             </li>
             <li class="nav-item" [routerLinkActive]="['active']" *ngIf="loggedIn()">
-              <a class="nav-link text-dark" [routerLink]="['/texts']">Тексты</a>
-            </li>
-            <li class="nav-item" [routerLinkActive]="['active']" *ngIf="loggedIn()">
               <a class="nav-link text-dark" [routerLink]="['/suggestions']">Предложения</a>
             </li>
             <li class="nav-item" [routerLinkActive]="['active']" *ngIf="loggedIn()">
@@ -64,9 +61,6 @@
                 Привет {{ authService.decodedToken.sub | titlecase }}
               </a>
               <div class="dropdown-menu mt-3" *dropdownMenu>
-                <a class="dropdown-item" href="#" [routerLink]="['/user-profile']"
-                  ><i class="fa fa-user"> </i>Редактировать профиль</a
-                >
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" (click)="logout()" title="Logout"
                   ><i class="fa fa-sign-out"> </i>Выход</a

@@ -8,7 +8,6 @@
           <tr>
             <th>№</th>
             <th>Код чата</th>
-            <th>Код блока</th>
             <th>Код сервиса</th>
             <th>Действия</th>
           </tr>
@@ -17,7 +16,6 @@
           <tr *ngFor="let chat of chats | async">
             <td>{{chat.id}}</td>
             <td>{{chat.chatId}}</td>
-            <td>{{chat.blockId}}</td>
             <td>{{chat.serviceId}}</td>
             <td>
                 <button (click)="updateChat(chat.id)" class="btn btn-outline-secondary ml-2"><i class="fa fa-pencil-square-o"></i></button> 
