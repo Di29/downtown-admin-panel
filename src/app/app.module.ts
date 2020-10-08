@@ -75,7 +75,7 @@ export function tokenGetter() {
         blacklistedRoutes: ['https://downtown-bot-api.herokuapp.com/auth'],
       },
     }),
-    NgbModule,
+    //NgbModule,
   ],
   providers: [
     AuthService,
