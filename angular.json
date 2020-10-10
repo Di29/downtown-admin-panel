@@ -14,7 +14,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "allowedCommonJsDependencies": [
-                "alertifyjs"
+                "alertify"
              ],
             "outputPath": "dist/DowntownAdminPanel",
             "index": "src/index.html",
