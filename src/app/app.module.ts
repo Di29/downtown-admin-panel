@@ -72,7 +72,7 @@ export function tokenGetter() {
       config: {
         tokenGetter,
         allowedDomains: ['https://downtown-bot-api.herokuapp.com/'],
-        disallowedRoutes:['https://downtown-bot-api.herokuapp.com/auth]
+        disallowedRoutes:['https://downtown-bot-api.herokuapp.com/auth],
       },
     }),
     //NgbModule,
