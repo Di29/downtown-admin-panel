@@ -71,8 +71,6 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter,
-        whitelistedDomains: ['https://downtown-bot-api.herokuapp.com/'],
-        blacklistedRoutes: ['https://downtown-bot-api.herokuapp.com/auth'],
       },
     }),
     //NgbModule,
