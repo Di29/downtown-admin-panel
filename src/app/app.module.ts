@@ -71,7 +71,7 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter,
-        allowedDomains: ['https://downtown-bot-api.herokuapp.com/'],
+        allowedDomains: ['https://downtown-bot-api.herokuapp.com/','https://downtown-bot-api.herokuapp.com/auth'],
       },
     }),
     //NgbModule,
