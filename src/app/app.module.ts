@@ -71,6 +71,8 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter,
+        whitelistedDomains: ['https://fivesbot3.herokuapp.com/'],
+        blacklistedRoutes: ['https://fivesbot3.herokuapp.com/auth']
       },
     }),
     //NgbModule,
